@@ -1,0 +1,183 @@
+$tablet-screen: 768px;
+$nav-icon-width: 30px;
+@import "../helpers/normalize";
+@import "../helpers/helpers";
+
+*{
+   box-sizing: border-box;
+}
+
+body {
+   font-family: 'sans-serif', 'Helvetica', sans-serif;
+}
+
+.header-font{
+   font-family: 'Poppins', 'Helvetica' sans-serif;
+   font-weight: 700;
+}
+
+#app-container{
+   background-color: #69A77C;
+}
+
+
+nav {
+    position: fixed;
+    top: 0; left: 0;
+    max-height: 10000px;
+    background: #222222;
+    color: #fff;
+    z-index: 300;
+    padding-bottom: 20px;
+
+    input.toggler{
+      position: absolute;
+      top: 0; left: 0;
+      margin: 0;
+      opacity: .25;
+      z-index: 3;
+
+      // `~` allows us to target SIBLING HTML elements
+      &:checked ~ .hamburger-icon{
+        background-color: #3498db;
+      }
+
+      // `~` allows us to target SIBLING HTML elements
+      //   here
+      &:checked ~ ul{
+        max-height: 1000px;
+      }
+
+    }
+
+    .hamburger-icon{
+      position: absolute;
+      top: 0; left: 0;
+      width: 60px;
+      height: $nav-icon-width;
+      z-index: 2;
+      padding-top: 15px;
+      text-align: center;
+   }
+
+      i {
+        // line-height will vertically center text for ONE line of text
+        line-height: $nav-icon-width;
+      }
+
+    }
+
+    ul{
+      max-height: 0px;
+      margin: 0;
+      padding-left: 0;
+      padding-top: $nav-icon-width;
+      list-style-type: none;
+      overflow: hidden;
+      transition: .2s all;
+
+
+      li {
+        padding: 10px;
+
+        }
+      }
+
+      .more-about{
+
+         background: #69A77C;
+         padding-top: 100px;
+}
+      .button-container a {
+            background: #69A77C;
+            border: rgba(217,217,216,.8) solid;
+            color: rgba(176,185,178,.8) solid;
+            font-size: 10px;
+            padding: 15px;
+            padding-left: 30px;
+            padding-right: 30px;
+
+      }
+
+      .my-hero {
+         p {
+            font-size: 12px;
+            padding-top: 10px;
+         }
+
+      }
+
+      .imgcontainer {
+         img {
+            width: 100%;
+         }
+      }
+
+      .employee-grants {
+         background: #69A77C;
+
+         p{
+            font-size: 14px;
+            color: #646865;
+            font-weight: lighter;
+         }
+      }
+
+      .employee-projects {
+         img {
+            width: 100%;
+         }
+      }
+
+      .small-mighty-banner {
+         background: url('/Users/Jordan_wicker/TIY/Assignments/assignment-07-bootstrap/images/assets/solrod-team-background.jpg') center center no-repeat;
+         background-size: cover;
+         visibility: hidden;
+
+         img {
+            width: 50%;
+         }
+      }
+
+      .join-our-team {
+         background: url('/Users/Jordan_wicker/TIY/Assignments/assignment-07-bootstrap/images/assets/solrod-drawingboard-background.jpg') center center no-repeat;
+         background-size: cover;
+
+         img {
+            width: 30%;
+         }
+
+         a {
+            background-color: #6B819D;
+            width: 70%;
+            color: #D8DEE5;
+         }
+      }
+
+      .social-media-icons {
+         img {
+            width: 60px;
+            padding: 15px;
+
+         }
+      }
+@media only screen and (min-width: 768px) {
+
+   nav { width: 100%;
+   }
+
+   .small-mighty-banner{
+      visibility: visible;
+   }
+
+   .employee-grants {
+      p {
+         color: #DFDEDE;
+      }
+
+      h2 {
+         color: #DFDEDE;
+      }
+
+   }
+}
