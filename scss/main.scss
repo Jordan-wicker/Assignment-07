@@ -1,183 +1,197 @@
-$tablet-screen: 768px;
-$nav-icon-width: 30px;
-@import "../helpers/normalize";
-@import "../helpers/helpers";
+@import "./imports/_normalize.scss";
 
-*{
-   box-sizing: border-box;
+*{ box-sizing: border-box }
+
+img {
+   width: 100%;
+   display: block; 
 }
+body{
+   font-family: Palatino, sans-serif;
+   background-color: #69A77C;
+   height: 100vh;
 
-body {
-   font-family: 'sans-serif', 'Helvetica', sans-serif;
-}
-
-.header-font{
-   font-family: 'Poppins', 'Helvetica' sans-serif;
-   font-weight: 700;
 }
 
 #app-container{
-   background-color: #69A77C;
-}
+   max-width: 960px;
+   margin: auto;
 
-
-nav {
-    position: fixed;
-    top: 0; left: 0;
-    max-height: 10000px;
-    background: #222222;
-    color: #fff;
-    z-index: 300;
-    padding-bottom: 20px;
-
-    input.toggler{
-      position: absolute;
-      top: 0; left: 0;
+//navbar element//
+.navbar-container{
+      width: 100%;
       margin: 0;
-      opacity: .25;
-      z-index: 3;
-
-      // `~` allows us to target SIBLING HTML elements
-      &:checked ~ .hamburger-icon{
-        background-color: #3498db;
-      }
-
-      // `~` allows us to target SIBLING HTML elements
-      //   here
-      &:checked ~ ul{
-        max-height: 1000px;
-      }
-
-    }
-
-    .hamburger-icon{
-      position: absolute;
-      top: 0; left: 0;
-      width: 60px;
-      height: $nav-icon-width;
-      z-index: 2;
-      padding-top: 15px;
+      font-size: medium;
       text-align: center;
+      margin-bottom: 20px;
+}
+.solrod-logo{
+      width: 20px;
+        }
+
+//about us and information container//
+.info-container {
+        width: 100%;
+}
+.about-us{
+          margin: auto;
+          width: 50%;
+          height: 30px;
+          margin-bottom: 20px;
+          font-size: 12px;
+          color: lightgrey;
+          text-align: center;
+          border: 1px solid white;
+             p{
+              padding: 7px
+              }
+          }
+
+.artist-container{
+         margin: auto;
+         margin: 0, auto;
+         width: 100%;
+         height: 40%;
+         padding-top: 2px;
+         margin-bottom: 20px;
+         background-color: white;
+            h2{
+               padding: 10px;
+               }
+            p{
+               padding: 0px;
+               font-size: 13px;
+               }
+            }
+//profile pictures//
+.picture-container > *{
+   width: 100%;
+   padding: 0;
+   margin: 0;
+}
+   .pic-column > * {
+      padding: 10px;
+         margin-bottom: 20px;
+         border-radius: 10px;
+         img{
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            }
+         }
+.pic-column-info > *{
+         margin-top: 10px;
+         }
+.small-but-mighty{
+   display: none;
+}
+//small but mighty//
+.small-but-mighty{
+      display: none;
+       }
+//artist works//
+.art-grants{
+   width: 50%;
+   padding: 30px;
+   margin: auto;
+   height: 150px;
+   margin-bottom: 20px;
+   font-size: 12px;
+   text-align: center;
+   color: white;
+      p{
+
+         font-size: 12px;
+         padding: 0px;
+      }
    }
 
-      i {
-        // line-height will vertically center text for ONE line of text
-        line-height: $nav-icon-width;
+.pic-container > *{
+   border-radius: 10px;
+     p{
+         color: lightgrey;
       }
-
-    }
-
-    ul{
-      max-height: 0px;
-      margin: 0;
-      padding-left: 0;
-      padding-top: $nav-icon-width;
-      list-style-type: none;
-      overflow: hidden;
-      transition: .2s all;
-
-
-      li {
-        padding: 10px;
+   }
+.art-container{
+   margin-top: 70px;
+   padding-top: 70px
+}
+  .chevron{
+    position: relative;
+        i{
+           color: lightgrey;
+           position: absolute;
+           bottom: 25px;
+           right: 25px;
+        }
+        p{
+           color: lightgrey;
+           position: absolute;
+           bottom: 13px;
+           right: 50px;
 
         }
       }
+//join our team//
+.img-container{
 
-      .more-about{
-
-         background: #69A77C;
-         padding-top: 100px;
+   height: 300px;
+   background: url('../images/assets/solrod-drawingboard-background.jpg')center center no-repeat;
+   background: cover;
 }
-      .button-container a {
-            background: #69A77C;
-            border: rgba(217,217,216,.8) solid;
-            color: rgba(176,185,178,.8) solid;
-            font-size: 10px;
-            padding: 15px;
-            padding-left: 30px;
-            padding-right: 30px;
-
+.join-button{
+   margin-top: 60px;
+   width: 100%;
+   background-color: darkgrey;
+      p{
+         margin-top: 10px;
+         padding: 5px;
       }
+}
+//footer//
+.footer{
 
-      .my-hero {
-         p {
-            font-size: 12px;
-            padding-top: 10px;
-         }
-
+   width: 100%;
+   height: 10px;
+}
+.social{
+   img{
+      padding: 0;
+      height: 20px;
+      width: 25px;
       }
-
-      .imgcontainer {
-         img {
-            width: 100%;
-         }
-      }
-
-      .employee-grants {
-         background: #69A77C;
-
-         p{
-            font-size: 14px;
-            color: #646865;
-            font-weight: lighter;
-         }
-      }
-
-      .employee-projects {
-         img {
-            width: 100%;
-         }
-      }
-
-      .small-mighty-banner {
-         background: url('/Users/Jordan_wicker/TIY/Assignments/assignment-07-bootstrap/images/assets/solrod-team-background.jpg') center center no-repeat;
-         background-size: cover;
-         visibility: hidden;
-
-         img {
-            width: 50%;
-         }
-      }
-
-      .join-our-team {
-         background: url('/Users/Jordan_wicker/TIY/Assignments/assignment-07-bootstrap/images/assets/solrod-drawingboard-background.jpg') center center no-repeat;
-         background-size: cover;
-
-         img {
-            width: 30%;
-         }
-
-         a {
-            background-color: #6B819D;
-            width: 70%;
-            color: #D8DEE5;
-         }
-      }
-
-      .social-media-icons {
-         img {
-            width: 60px;
-            padding: 15px;
-
-         }
-      }
-@media only screen and (min-width: 768px) {
-
-   nav { width: 100%;
    }
 
-   .small-mighty-banner{
-      visibility: visible;
-   }
 
-   .employee-grants {
-      p {
-         color: #DFDEDE;
+
+
+
+
+
+/* Small devices (tablets, 768px and up) */
+   @media screen and (min-width: 768px){
+
+      .art-grants{
+         padding: 60px;
+      }
+      .small-but-mighty{
+
+         display: block;
+         background: url('../images/assets/solrod-team-background.jpg') center center no-repeat;
+         background: cover;
+         height: 80%;
+         position: relative;
+            img{
+               width: 30%;
+               position: absolute;
+               top: 30%;
+               left: 35%;
+            }
+         }
+      }
+      .social{
+         margin-right: -900px;
+
       }
 
-      h2 {
-         color: #DFDEDE;
-      }
 
-   }
 }
